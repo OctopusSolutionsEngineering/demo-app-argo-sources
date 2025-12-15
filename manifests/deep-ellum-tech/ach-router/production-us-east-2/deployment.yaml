@@ -14,13 +14,13 @@ spec:
     spec:
       containers:
         - name: ach-router
-          image: index.docker.io/octopussolutionsengineering/ghu-ach-router:25.12.12222027
+          image: index.docker.io/octopussolutionsengineering/ghu-ach-router:25.12.15222042
           ports:
             - name: http-route
               containerPort: 80
           env:
             - name: DATABASE_SERVER
-            - value "production-us-east-2-db"
+            - value: "production-us-east-2-db"
           env:
             - name: DATABASE_NAME
-            - value "ach-router"
+            - value: "ach-router"
