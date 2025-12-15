@@ -20,7 +20,7 @@ spec:
               containerPort: 80
           env:
             - name: DATABASE_SERVER
-            - value "test-us-west-1-db"
+            - value: "test-us-west-1-db"
           env:
             - name: DATABASE_NAME
-            - value "ach-router"
+            - value: "ach-router"
