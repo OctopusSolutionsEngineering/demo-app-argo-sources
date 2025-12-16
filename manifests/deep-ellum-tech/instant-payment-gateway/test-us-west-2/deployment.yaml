@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: instant-payment-gateway-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      component: instant-payment-gateway-service
+  template:
+    metadata:
+      labels:
+        component: instant-payment-gateway-service
+    spec:
+      containers:
+        - name: instant-payment-gateway
+          image: index.docker.io/octopussolutionsengineering/ghu-instant-pay-gateway:25.12.15221844
+          ports:
+            - name: http-route
+              containerPort: 80
+          env:
+            - name: DATABASE_SERVER
+              value: "test-us-west-2-db"
+            - name: DATABASE_NAME
+              value: "ach-router"
