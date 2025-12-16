@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: swift-bridge
-          image: index.docker.io/octopussolutionsengineering/ghu-instant-pay-gateway:25.12.16151930
+          image: index.docker.io/octopussolutionsengineering/ghu-swift-bridge:25.12.16172224
           ports:
             - name: http-route
               containerPort: 80
