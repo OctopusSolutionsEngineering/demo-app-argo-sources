@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: instant-payment-gateway
-          image: index.docker.io/octopussolutionsengineering/ghu-instant-pay-gateway:26.01.13151926
+          image: index.docker.io/octopussolutionsengineering/ghu-instant-pay-gateway:26.01.13162011
           ports:
             - name: http-route
               containerPort: 80
