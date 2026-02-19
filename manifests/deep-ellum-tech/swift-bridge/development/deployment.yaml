@@ -14,12 +14,12 @@ spec:
     spec:
       containers:
         - name: swift-bridge
-          image: index.docker.io/octopussolutionsengineering/ghu-swift-bridge:26.02.05162811
+          image: index.docker.io/octopussolutionsengineering/ghu-swift-bridge:26.02.19202544
           ports:
             - name: http-route
               containerPort: 80
           env:
             - name: DATABASE_SERVER
-              value: "development-db"
+              value: "temp"
             - name: DATABASE_NAME
-              value: "swift-bridge"
+              value: "temp"
