@@ -11,10 +11,11 @@ spec:
     metadata:
       labels:
         component: pricing-api-service
+        release: 1.1.5
     spec:
       containers:
         - name: pricing-api
-          image: index.docker.io/octopussolutionsengineering/ghu-instant-pay-gateway:26.03.19143021
+          image: index.docker.io/octopussolutionsengineering/ghu-instant-pay-gateway:26.03.19182935
           ports:
             - name: http-route
               containerPort: 80
