@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: pricing-frontend
-          image: index.docker.io/octopussolutionsengineering/ghu-instant-pay-gateway:26.03.19143021
+          image: index.docker.io/octopussolutionsengineering/ghu-instant-pay-gateway:26.03.19152939
           ports:
             - name: http-route
               containerPort: 80
