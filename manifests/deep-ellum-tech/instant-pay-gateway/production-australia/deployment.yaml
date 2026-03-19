@@ -7,7 +7,7 @@ spec:
   selector:
     matchLabels:
       component: instant-pay-gateway-service
-      release: 26.03.19173227
+      release: 26.03.19182935
   template:
     metadata:
       labels:
@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: instant-pay-gateway
-          image: index.docker.io/octopussolutionsengineering/ghu-instant-pay-gateway:26.03.19173227
+          image: index.docker.io/octopussolutionsengineering/ghu-instant-pay-gateway:26.03.19182935
           ports:
             - name: http-route
               containerPort: 80
