@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pricing-api-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      component: pricing-api-service
+  template:
+    metadata:
+      labels:
+        component: pricing-api-service
+        release: 1.1.5
+    spec:
+      containers:
+        - name: pricing-api
+          image: index.docker.io/octopussolutionsengineering/ghu-instant-pay-gateway:26.03.19182935
+          ports:
+            - name: http-route
+              containerPort: 80
+          env:
+            - name: DATABASE_SERVER
+              value: "test"
+            - name: DATABASE_NAME
+              value: "pricing-api"
