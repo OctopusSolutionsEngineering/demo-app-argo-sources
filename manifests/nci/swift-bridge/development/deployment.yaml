@@ -1,26 +1,26 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: pricing-api-deployment
+  name: swift-bridge-deployment
 spec:
   replicas: 1
   selector:
     matchLabels:
-      component: pricing-api-service
+      component: swift-bridge-service
   template:
     metadata:
       labels:
-        component: pricing-api-service
-        release: 1.1.5
+        component: swift-bridge-service
+        release: 2.50.1
     spec:
       containers:
-        - name: pricing-api
-          image: index.docker.io/octopussolutionsengineering/ghu-instant-pay-gateway:26.03.19182935
+        - name: swift-bridge
+          image: index.docker.io/octopussolutionsengineering/ghu-swift-bridge:26.03.19222257
           ports:
             - name: http-route
               containerPort: 80
           env:
             - name: DATABASE_SERVER
-              value: "development"
+              value: "pt-postgres-server-non-prod"
             - name: DATABASE_NAME
-              value: "pricing-api"
+              value: "swift-bridge-db"
