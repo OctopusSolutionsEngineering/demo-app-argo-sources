@@ -1,26 +1,26 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: pricing-api-deployment
+  name: ach-router-deployment
 spec:
   replicas: 1
   selector:
     matchLabels:
-      component: pricing-api-service
+      component: ach-router-service
   template:
     metadata:
       labels:
-        component: pricing-api-service
-        release: 1.1.5
+        component: ach-router-service
+        release: 2.3.7
     spec:
       containers:
-        - name: pricing-api
-          image: index.docker.io/octopussolutionsengineering/ghu-instant-pay-gateway:26.03.19182935
+        - name: ach-router
+          image: index.docker.io/octopussolutionsengineering/ghu-ach-router:26.03.19222141
           ports:
             - name: http-route
               containerPort: 80
           env:
             - name: DATABASE_SERVER
-              value: "development"
+              value: "pt-postgres-server-non-prod"
             - name: DATABASE_NAME
-              value: "pricing-api"
+              value: "ach-router-db"
