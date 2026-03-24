@@ -11,7 +11,7 @@ spec:
     metadata:
       labels:
         component: instant-pay-gateway-service
-        release: 2.33.3
+        release: 2.33.4
     spec:
       containers:
         - name: instant-pay-gateway
