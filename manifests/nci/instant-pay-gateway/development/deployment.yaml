@@ -11,11 +11,11 @@ spec:
     metadata:
       labels:
         component: instant-pay-gateway-service
-        release: 2.33.4
+        release: 2.33.5
     spec:
       containers:
         - name: instant-pay-gateway
-          image: index.docker.io/octopussolutionsengineering/ghu-instant-pay-gateway:26.03.19221937
+          image: index.docker.io/octopussolutionsengineering/ghu-instant-pay-gateway:26.03.24012220
           ports:
             - name: http-route
               containerPort: 80
