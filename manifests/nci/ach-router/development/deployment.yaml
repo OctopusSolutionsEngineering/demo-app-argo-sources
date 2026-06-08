@@ -11,7 +11,7 @@ spec:
     metadata:
       labels:
         component: ach-router-service
-        release: 2.3.14
+        release: 2.3.17
     spec:
       containers:
         - name: ach-router
