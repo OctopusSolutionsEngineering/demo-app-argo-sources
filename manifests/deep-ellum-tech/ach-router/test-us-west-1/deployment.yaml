@@ -11,10 +11,11 @@ spec:
     metadata:
       labels:
         component: ach-router-service
+        release: 1.0.261
     spec:
       containers:
         - name: ach-router
-          image: index.docker.io/octopussolutionsengineering/ghu-ach-router:26.01.16153730
+          image: index.docker.io/octopussolutionsengineering/ghu-ach-router:26.06.25003250
           ports:
             - name: http-route
               containerPort: 80
