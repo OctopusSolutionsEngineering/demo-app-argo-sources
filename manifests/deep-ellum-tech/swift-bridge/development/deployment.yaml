@@ -11,11 +11,11 @@ spec:
     metadata:
       labels:
         component: swift-bridge-service
-        release: 26.5.22191841
+        release: 26.06.25123216
     spec:
       containers:
         - name: swift-bridge
-          image: index.docker.io/octopussolutionsengineering/ghu-swift-bridge:26.05.22191840
+          image: index.docker.io/octopussolutionsengineering/ghu-swift-bridge:26.06.25123216
           ports:
             - name: http-route
               containerPort: 80
