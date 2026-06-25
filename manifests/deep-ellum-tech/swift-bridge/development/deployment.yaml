@@ -11,7 +11,7 @@ spec:
     metadata:
       labels:
         component: swift-bridge-service
-        release: 26.05.22191840
+        release: 26.5.22191841
     spec:
       containers:
         - name: swift-bridge
