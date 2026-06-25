@@ -1,5 +1,5 @@
-apiVersion: argoproj.io/v1alpha1
-kind: Rollout
+apiVersion: apps/v1
+kind: Deployment
 metadata:
   name: instant-pay-gateway-deployment
 spec:
@@ -7,23 +7,20 @@ spec:
   selector:
     matchLabels:
       component: instant-pay-gateway-service
-      release: 26.06.24235847
   template:
     metadata:
       labels:
         component: instant-pay-gateway-service
+        release: 26.06.25001621
     spec:
       containers:
         - name: instant-pay-gateway
-          image: index.docker.io/octopussolutionsengineering/ghu-instant-pay-gateway:26.06.24235847
+          image: index.docker.io/octopussolutionsengineering/ghu-instant-pay-gateway:26.06.25001621
           ports:
             - name: http-route
               containerPort: 80
-  strategy:
-    canary:
-      steps:
-        - setWeight: 30
-        - pause: {}
-        - setWeight: 60
-        - pause: {}
-        - setWeight: 100
+          env:
+            - name: DATABASE_SERVER
+              value: "production-argentina-db"
+            - name: DATABASE_NAME
+              value: "instant-pay-gateway"
