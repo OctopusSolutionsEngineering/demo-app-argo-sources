@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ach-router-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      component: ach-router-service
+  template:
+    metadata:
+      labels:
+        component: ach-router-service
+        release: 2026.10.27.6
+    spec:
+      containers:
+        - name: ach-router
+          image: index.docker.io/octopussolutionsengineering/ghu-ach-router:26.10.27151710
+          ports:
+            - name: http-route
+              containerPort: 80
+          env:
+            - name: DATABASE_SERVER
+              value: "production-brazil-db"
+            - name: DATABASE_NAME
+              value: "ach-router"
