@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: swift-bridge-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      component: swift-bridge-service
+  template:
+    metadata:
+      labels:
+        component: swift-bridge-service
+        release: 26.10.27182334
+    spec:
+      containers:
+        - name: swift-bridge
+          image: index.docker.io/octopussolutionsengineering/ghu-swift-bridge:26.10.27182334
+          ports:
+            - name: http-route
+              containerPort: 80
+          env:
+            - name: DATABASE_SERVER
+              value: "development-db"
+            - name: DATABASE_NAME
+              value: "swift-bridge"
